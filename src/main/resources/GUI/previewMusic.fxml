@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -215,6 +216,11 @@
                         <Insets left="15.0" />
                      </padding>
                   </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="0.0">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin>
+                  </Separator>
                   <VBox alignment="CENTER_RIGHT" prefHeight="154.0" prefWidth="222.0">
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0" spacing="15.0">
@@ -240,7 +246,7 @@
                         </HBox>
                      </children>
                      <HBox.margin>
-                        <Insets left="30.0" />
+                        <Insets />
                      </HBox.margin>
                   </VBox>
                </children>
