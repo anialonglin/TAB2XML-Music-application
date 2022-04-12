@@ -157,7 +157,7 @@ public class Guitar {
 
 
 
-	private int countNotes(List<Note> noteList) {
+	public int countNotes(List<Note> noteList) {
 		int numOfSpace = 0;
 		for (int i = 0; i < noteList.size(); i++) {
 			Note n = noteList.get(i);
@@ -219,7 +219,7 @@ public class Guitar {
 	}
 
 	// method to count the space required for notes in noteList
-	private int countNoteSpacesRequired(List<Note> noteList) {
+	public int countNoteSpacesRequired(List<Note> noteList) {
 		int numOfSpace = countNotes(noteList);
 		int space = (int) (numOfSpace * getSpacing());
 
@@ -326,7 +326,7 @@ public class Guitar {
 
 	}
 
-	private boolean noteHasSlide(Note note) {
+	public boolean noteHasSlide(Note note) {
 		Boolean res = note.getNotations().getSlides() == null ? false : true;
 		return res;
 	}
@@ -357,7 +357,7 @@ public class Guitar {
 		}
 	}
 
-	private boolean noteHasHarmonic(Note note) {
+	public boolean noteHasHarmonic(Note note) {
 		Boolean res = note.getNotations().getTechnical().getHarmonic() == null ? false : true;
 		return res;
 	}
@@ -475,7 +475,7 @@ public class Guitar {
 		}
 	}
 
-	private boolean noteHasTie(Note note) {
+	public boolean noteHasTie(Note note) {
 		Boolean res = note.getNotations().getTieds() == null ? false : true;
 		return res;
 	}
@@ -503,19 +503,19 @@ public class Guitar {
 	}
 
 	// returns true if note has a chord tag
-	private boolean noteHasBend(Note note) {
+	public boolean noteHasBend(Note note) {
 		Boolean res = note.getNotations().getTechnical().getBend() == null ? false : true;
 		return res;
 	}
 
 	// returns true if note has a grace tag
-	private boolean noteHasGrace(Note note) {
+	public boolean noteHasGrace(Note note) {
 		Boolean res = note.getGrace() == null ? false : true;
 		return res;
 	}
 
 	// count the number of graces in a row
-	private int countGraceSpace(Note n, List<Note> noteList) {
+	public int countGraceSpace(Note n, List<Note> noteList) {
 		int index = noteList.indexOf(n);
 		int res = 0;
 		for (int i = index; i < noteList.size() - 1; i++) {
@@ -684,7 +684,7 @@ public class Guitar {
 		}
 	}
 
-	private Boolean nextHasActual(Note note, List<Note> noteList) {
+	public Boolean nextHasActual(Note note, List<Note> noteList) {
 		Boolean res = false;
 		for (int i = noteList.indexOf(note); i < noteList.size() - 1; i++) {
 			Note next = noteList.get(i + 1);
@@ -700,7 +700,7 @@ public class Guitar {
 		return res;
 	}
 
-	private int getActualNum(Note note, List<Note> noteList) {
+	public int getActualNum(Note note, List<Note> noteList) {
 		int res = 0;
 		for (int i = noteList.indexOf(note); i < noteList.size(); i++) {
 			Note next = noteList.get(i);
@@ -796,7 +796,7 @@ public class Guitar {
 		}
 	}
 
-	private boolean nextIsLastNote(Note note, List<Note> noteList) {
+	public boolean nextIsLastNote(Note note, List<Note> noteList) {
 		Boolean res = false;
 		int index = noteList.indexOf(note);
 		if (index + 1 == noteList.size() - 1) {
@@ -833,7 +833,7 @@ public class Guitar {
 		}
 	}
 
-	private String getLastType(Note note, List<Note> noteList) {
+	public String getLastType(Note note, List<Note> noteList) {
 		String lastType = "";
 		int index = noteList.indexOf(note);
 		for (int i = index; i > 0; i--) {
@@ -846,7 +846,7 @@ public class Guitar {
 		return lastType;
 	}
 
-	private String getNextType(Note note, List<Note> noteList) {
+	public String getNextType(Note note, List<Note> noteList) {
 		String nextType = "";
 		int index = noteList.indexOf(note);
 		for (int i = index; i < noteList.size() - 1; i++) {
@@ -873,12 +873,12 @@ public class Guitar {
 		}
 	}
 
-	private boolean noteHasActual(Note note) {
+	public boolean noteHasActual(Note note) {
 		Boolean res = note.getTimeModification() == null ? false : true;
 		return res;
 	}
 
-	private int countDotNumber(Note note) {
+	public int countDotNumber(Note note) {
 		int res = 0;
 		List<Dot> dotList = note.getDots();
 		for (int i = 0; i < dotList.size(); i++) {
