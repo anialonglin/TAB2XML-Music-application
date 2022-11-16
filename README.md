@@ -331,9 +331,9 @@ For further details refer to `Documents/UserManual/EECS2311_Group6_TAB2XML_UserM
 
 Group 6:
 
+* Ania(Long) Lin
 * Elmira Onagh
 * Irsa Nasir
-* Long Lin
 * Harjap Randhawa
 * Daniel Di Giovanni
 
